@@ -14,6 +14,7 @@ class Mycelium < Formula
     bin.install "bin/myc-watcher"
     bin.install "bin/myc-historian"
     bin.install "bin/myc-register"
+    bin.install "bin/myc-services"
 
     # Build wait-for-idle on macOS
     if OS.mac?
@@ -22,6 +23,13 @@ class Mycelium < Formula
              "-o", "wait-for-idle"
       bin.install "wait-for-idle"
     end
+  end
+
+  service do
+    run [Formula["python@3"].opt_bin/"python3", opt_bin/"myc-services"]
+    keep_alive true
+    log_path var/"log/mycelium.log"
+    error_log_path var/"log/mycelium.log"
   end
 
   def caveats
@@ -34,8 +42,11 @@ class Mycelium < Formula
         allow_remote_control socket-only
         listen_on unix:/tmp/kitty-socket
 
-      Start services:
-        myc start
+      Start mycelium services (watcher + historian):
+        brew services start mycelium
+
+      Mosquitto broker (installed as dependency):
+        brew services start mosquitto
 
       Quick demo (spawns two AI agents chatting):
         myc cultivate
