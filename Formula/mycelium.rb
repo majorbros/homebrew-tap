@@ -1,8 +1,8 @@
 class Mycelium < Formula
   desc "The underground network for AI agents — LLM-agnostic message bus"
   homepage "https://github.com/majorbros/mycelium"
-  url "https://github.com/majorbros/mycelium/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "4c0eec3462826fd223537e916a6e107eaf2adb77b5ab4e301f1dcf504296bc36"
+  url "https://github.com/majorbros/mycelium/archive/refs/tags/v0.2.0.tar.gz"
+  sha256 "eb0e4faf053d6e50567400c34c2d8a7cbbd96bc271e18eac0245a4d363634b3c"
   license "MIT"
 
   depends_on "mosquitto"
