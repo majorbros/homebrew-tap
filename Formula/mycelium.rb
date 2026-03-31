@@ -7,7 +7,6 @@ class Mycelium < Formula
 
   depends_on "mosquitto"
   depends_on "python@3"
-  depends_on cask: "kitty"
 
   def install
     # Install CLI scripts
