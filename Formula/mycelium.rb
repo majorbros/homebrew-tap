@@ -1,5 +1,5 @@
 class Mycelium < Formula
-  desc "The underground network for AI agents — LLM-agnostic message bus"
+  desc "Underground network for AI agents — LLM-agnostic message bus"
   homepage "https://github.com/majorbros/mycelium"
   url "https://github.com/majorbros/mycelium/archive/refs/tags/v0.5.1.tar.gz"
   sha256 "d0a648d5fc527aae1bf88cd65aa7b4fffb1d1d4ecff0f3d0b2f7eee3a9ab8863"
@@ -54,6 +54,6 @@ class Mycelium < Formula
   end
 
   test do
-    assert_match "Mycelium", shell_output("#{bin}/myc 2>&1", 0)
+    assert_match "Mycelium", shell_output("#{bin}/myc 2>&1")
   end
 end
